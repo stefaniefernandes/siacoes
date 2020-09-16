@@ -11,7 +11,7 @@ import java.util.List;
 import br.edu.utfpr.dv.siacoes.log.UpdateEvent;
 import br.edu.utfpr.dv.siacoes.model.ActivityUnit;
 
-public class ActivityUnitDAO {
+public class ActivityUnitDAO extends TemplateDAO<ActivityUnit>{
 	
 	public List<ActivityUnit> listAll() throws SQLException{
 		Connection conn = null;
@@ -117,7 +117,7 @@ public class ActivityUnitDAO {
 		}
 	}
 	
-	private ActivityUnit loadObject(ResultSet rs) throws SQLException{
+	public ActivityUnit loadObject(ResultSet rs) throws SQLException{
 		ActivityUnit unit = new ActivityUnit();
 		
 		unit.setIdActivityUnit(rs.getInt("idActivityUnit"));
